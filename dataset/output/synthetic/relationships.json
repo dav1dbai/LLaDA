@@ -1,0 +1,906 @@
+{
+  "characters": [
+    "Willie Johnson",
+    "Lauren Campbell",
+    "Jessica Brown",
+    "Wade Adams",
+    "Shannon Lee",
+    "Erica Adams",
+    "Derek Hall",
+    "Justin Parker",
+    "Lorraine Wilson",
+    "Megan King",
+    "Alvin Adams",
+    "Dean Baker",
+    "Rebecca Young",
+    "Stuart Campbell",
+    "Brenda Miller",
+    "Emily Wilson",
+    "Andrew Davis",
+    "Jeffrey Robinson",
+    "Corey Evans",
+    "Lucas Baker",
+    "Randall Martinez",
+    "Ellen White",
+    "Johnnie Harris",
+    "Floyd Hall",
+    "Chelsea Scott",
+    "Sally Wright",
+    "Lionel Martin",
+    "Keith Thomas",
+    "Whitney Wright",
+    "Cindy Hall",
+    "Andrea Thomas",
+    "Craig Harris",
+    "Michael Smith",
+    "Heather Martinez",
+    "Gerard Allen",
+    "Curtis Thompson",
+    "Rose Brown",
+    "Brandon Richardson",
+    "Roosevelt Johnson",
+    "Erin Martin",
+    "Vivian Garcia",
+    "Gloria White",
+    "Scott Wilson",
+    "Melissa Taylor",
+    "Shane Johnson",
+    "Kathleen Adams",
+    "Trevor Davis",
+    "Nicholas Walker",
+    "Nathaniel Adams",
+    "Vernon Clark",
+    "Timothy Moore",
+    "Stacy Wright",
+    "Laura Scott",
+    "Louis Wright",
+    "Dustin Allen",
+    "Jamie Taylor",
+    "Jeremy Wright",
+    "Daniel White",
+    "Jean Harris",
+    "Lisa Martinez",
+    "Kristin Moore",
+    "Ruben Martinez",
+    "Paula Martin",
+    "Brian Hill",
+    "Gilbert Brown",
+    "Marty Allen",
+    "Jacqueline Taylor",
+    "Darren Garcia",
+    "Tyler Johnson",
+    "Catherine Lee",
+    "Holly Nelson",
+    "Sean Phillips",
+    "Christine Miller",
+    "Jeremiah Baker",
+    "Dwayne Johnson",
+    "Sherry Wilson",
+    "Lindsey Davis",
+    "Joshua Taylor",
+    "Joel Campbell",
+    "Blake Garcia",
+    "Steven Adams",
+    "Marvin Thomas",
+    "Anita Martin",
+    "Neil Wilson",
+    "Carolyn Lee",
+    "Milton Harris",
+    "Brittany Moore",
+    "Katherine Allen",
+    "Cassandra Lewis",
+    "Janice Thompson",
+    "Rhonda Miller",
+    "Peggy Wilson",
+    "Robin Johnson",
+    "Gordon Wilson",
+    "Brandi Miller",
+    "Daryl Thomas",
+    "Carlton Davis",
+    "Patrick Nelson",
+    "Sarah Miller",
+    "Cheryl Wilson",
+    "Nathan Campbell",
+    "Tracy Evans",
+    "Teresa Lee",
+    "William Turner",
+    "Tiffany Martin",
+    "Clifford Allen",
+    "Candice Harris",
+    "Diane Miller",
+    "Bradley White",
+    "Jared Taylor",
+    "Marlon Garcia",
+    "Ramon Garcia",
+    "Nancy Thompson",
+    "Rachel Green",
+    "Eric Wilson",
+    "Sheila Garcia",
+    "Wayne Davis",
+    "Francis Lee",
+    "Colleen Martin",
+    "Colin Wilson",
+    "Dorothy White",
+    "Monica Lewis",
+    "Evan Wright",
+    "Tara Campbell",
+    "Courtney Wilson",
+    "Edgar Hall",
+    "Jenna Miller",
+    "Seth Parker",
+    "Brent Wright",
+    "Phyllis Wright",
+    "Leslie Baker",
+    "Stephanie Hall",
+    "Kevin Phillips",
+    "Shaun Smith",
+    "Carrie Thomas",
+    "Kent Taylor",
+    "Donna Miller",
+    "Bonnie Lee",
+    "Christina Thompson",
+    "Kristina Walker",
+    "Melanie Brown",
+    "Nicole Harris",
+    "Dana Evans",
+    "Norman Clark",
+    "Emma Thompson",
+    "Jason Taylor",
+    "Glen Adams",
+    "Derrick Allen",
+    "Jacob Martinez",
+    "Antonio Garcia",
+    "Douglas Wright",
+    "Brett Wilson",
+    "Morgan Wilson",
+    "Perry Wilson",
+    "April Reed",
+    "Marilyn Thompson",
+    "Connie Evans",
+    "Amanda Anderson",
+    "Vanessa Brown",
+    "Cecil Taylor",
+    "Tammy Lee",
+    "Samantha Harris",
+    "Clarence Davis",
+    "Mark Wilson",
+    "Kyle Thompson",
+    "Eugene Davis",
+    "Danielle Nelson",
+    "Michelle Thomas",
+    "Kelli Wright",
+    "Adam White",
+    "Annette Miller",
+    "Matthew Johnson",
+    "Georgia Brown",
+    "Gregory Adams",
+    "Gina Martin",
+    "Helen Thompson",
+    "Denise Brown",
+    "Amber Lee",
+    "Jonathan Lewis",
+    "Hector Garcia",
+    "Christopher Lee",
+    "Ashley Martinez",
+    "Dawn Harris",
+    "Travis Brown",
+    "Harvey Baker",
+    "Joanne Taylor",
+    "Valerie Adams",
+    "Jillian Adams",
+    "Betty Davis",
+    "Sandra White",
+    "Kelly Clark",
+    "Natalie Johnson",
+    "Jennifer White",
+    "Ryan Martin",
+    "Warren Davis",
+    "Dennis Clark",
+    "Wendell Taylor",
+    "Chad Davis",
+    "Sylvester Brown",
+    "Victoria Wright"
+  ],
+  "adjacency_list": {
+    "Willie Johnson": [
+      {
+        "target": "Joshua Taylor",
+        "relation": "student"
+      }
+    ],
+    "Lauren Campbell": [],
+    "Jessica Brown": [],
+    "Wade Adams": [],
+    "Shannon Lee": [],
+    "Erica Adams": [
+      {
+        "target": "Stacy Wright",
+        "relation": "student"
+      }
+    ],
+    "Derek Hall": [
+      {
+        "target": "Ellen White",
+        "relation": "mentee"
+      }
+    ],
+    "Justin Parker": [
+      {
+        "target": "Michelle Thomas",
+        "relation": "sailor"
+      }
+    ],
+    "Lorraine Wilson": [],
+    "Megan King": [
+      {
+        "target": "Natalie Johnson",
+        "relation": "employee"
+      }
+    ],
+    "Alvin Adams": [],
+    "Dean Baker": [
+      {
+        "target": "Hector Garcia",
+        "relation": "researcher"
+      }
+    ],
+    "Rebecca Young": [
+      {
+        "target": "Catherine Lee",
+        "relation": "athlete"
+      }
+    ],
+    "Stuart Campbell": [],
+    "Brenda Miller": [],
+    "Emily Wilson": [
+      {
+        "target": "Katherine Allen",
+        "relation": "sailor"
+      }
+    ],
+    "Andrew Davis": [
+      {
+        "target": "Erin Martin",
+        "relation": "patient"
+      }
+    ],
+    "Jeffrey Robinson": [],
+    "Corey Evans": [],
+    "Lucas Baker": [
+      {
+        "target": "Joanne Taylor",
+        "relation": "student"
+      }
+    ],
+    "Randall Martinez": [
+      {
+        "target": "Amanda Anderson",
+        "relation": "friend"
+      }
+    ],
+    "Ellen White": [],
+    "Johnnie Harris": [
+      {
+        "target": "Jacqueline Taylor",
+        "relation": "student"
+      }
+    ],
+    "Floyd Hall": [],
+    "Chelsea Scott": [],
+    "Sally Wright": [
+      {
+        "target": "Rhonda Miller",
+        "relation": "client"
+      }
+    ],
+    "Lionel Martin": [
+      {
+        "target": "Samantha Harris",
+        "relation": "employee"
+      }
+    ],
+    "Keith Thomas": [
+      {
+        "target": "Sherry Wilson",
+        "relation": "student"
+      }
+    ],
+    "Whitney Wright": [],
+    "Cindy Hall": [
+      {
+        "target": "Ruben Martinez",
+        "relation": "patient"
+      }
+    ],
+    "Andrea Thomas": [],
+    "Craig Harris": [
+      {
+        "target": "Daniel White",
+        "relation": "client"
+      }
+    ],
+    "Michael Smith": [],
+    "Heather Martinez": [
+      {
+        "target": "Jessica Brown",
+        "relation": "student"
+      }
+    ],
+    "Gerard Allen": [
+      {
+        "target": "Sarah Miller",
+        "relation": "subject"
+      }
+    ],
+    "Curtis Thompson": [
+      {
+        "target": "Edgar Hall",
+        "relation": "child"
+      }
+    ],
+    "Rose Brown": [
+      {
+        "target": "Jeffrey Robinson",
+        "relation": "student"
+      }
+    ],
+    "Brandon Richardson": [
+      {
+        "target": "Cheryl Wilson",
+        "relation": "patient"
+      }
+    ],
+    "Roosevelt Johnson": [
+      {
+        "target": "Carrie Thomas",
+        "relation": "patient"
+      }
+    ],
+    "Erin Martin": [],
+    "Vivian Garcia": [
+      {
+        "target": "Melanie Brown",
+        "relation": "patient"
+      }
+    ],
+    "Gloria White": [
+      {
+        "target": "Leslie Baker",
+        "relation": "employee"
+      }
+    ],
+    "Scott Wilson": [],
+    "Melissa Taylor": [
+      {
+        "target": "Bonnie Lee",
+        "relation": "patient"
+      }
+    ],
+    "Shane Johnson": [
+      {
+        "target": "Clifford Allen",
+        "relation": "sailor"
+      }
+    ],
+    "Kathleen Adams": [],
+    "Trevor Davis": [
+      {
+        "target": "Tiffany Martin",
+        "relation": "passenger"
+      }
+    ],
+    "Nicholas Walker": [
+      {
+        "target": "Helen Thompson",
+        "relation": "patient"
+      }
+    ],
+    "Nathaniel Adams": [],
+    "Vernon Clark": [
+      {
+        "target": "Chelsea Scott",
+        "relation": "student"
+      }
+    ],
+    "Timothy Moore": [
+      {
+        "target": "Joel Campbell",
+        "relation": "patient"
+      }
+    ],
+    "Stacy Wright": [],
+    "Laura Scott": [],
+    "Louis Wright": [
+      {
+        "target": "Lauren Campbell",
+        "relation": "client"
+      }
+    ],
+    "Dustin Allen": [
+      {
+        "target": "Brent Wright",
+        "relation": "friend"
+      }
+    ],
+    "Jamie Taylor": [
+      {
+        "target": "Kathleen Adams",
+        "relation": "student"
+      }
+    ],
+    "Jeremy Wright": [],
+    "Daniel White": [],
+    "Jean Harris": [
+      {
+        "target": "Colin Wilson",
+        "relation": "researcher"
+      }
+    ],
+    "Lisa Martinez": [
+      {
+        "target": "Georgia Brown",
+        "relation": "friend"
+      }
+    ],
+    "Kristin Moore": [
+      {
+        "target": "Christina Thompson",
+        "relation": "employee"
+      }
+    ],
+    "Ruben Martinez": [],
+    "Paula Martin": [
+      {
+        "target": "Ryan Martin",
+        "relation": "child"
+      }
+    ],
+    "Brian Hill": [
+      {
+        "target": "Clarence Davis",
+        "relation": "patient"
+      }
+    ],
+    "Gilbert Brown": [],
+    "Marty Allen": [
+      {
+        "target": "Denise Brown",
+        "relation": "researcher"
+      }
+    ],
+    "Jacqueline Taylor": [],
+    "Darren Garcia": [
+      {
+        "target": "Brenda Miller",
+        "relation": "subject"
+      }
+    ],
+    "Tyler Johnson": [],
+    "Catherine Lee": [],
+    "Holly Nelson": [
+      {
+        "target": "Steven Adams",
+        "relation": "athlete"
+      }
+    ],
+    "Sean Phillips": [
+      {
+        "target": "Norman Clark",
+        "relation": "student"
+      }
+    ],
+    "Christine Miller": [],
+    "Jeremiah Baker": [],
+    "Dwayne Johnson": [
+      {
+        "target": "Laura Scott",
+        "relation": "subject"
+      }
+    ],
+    "Sherry Wilson": [],
+    "Lindsey Davis": [
+      {
+        "target": "Kent Taylor",
+        "relation": "passenger"
+      }
+    ],
+    "Joshua Taylor": [],
+    "Joel Campbell": [],
+    "Blake Garcia": [
+      {
+        "target": "Stuart Campbell",
+        "relation": "client"
+      }
+    ],
+    "Steven Adams": [],
+    "Marvin Thomas": [
+      {
+        "target": "Tyler Johnson",
+        "relation": "employee"
+      }
+    ],
+    "Anita Martin": [],
+    "Neil Wilson": [
+      {
+        "target": "Emma Thompson",
+        "relation": "passenger"
+      }
+    ],
+    "Carolyn Lee": [
+      {
+        "target": "Colleen Martin",
+        "relation": "athlete"
+      }
+    ],
+    "Milton Harris": [
+      {
+        "target": "Eric Wilson",
+        "relation": "passenger"
+      }
+    ],
+    "Brittany Moore": [
+      {
+        "target": "Morgan Wilson",
+        "relation": "sailor"
+      }
+    ],
+    "Katherine Allen": [],
+    "Cassandra Lewis": [
+      {
+        "target": "Sandra White",
+        "relation": "mentee"
+      }
+    ],
+    "Janice Thompson": [],
+    "Rhonda Miller": [],
+    "Peggy Wilson": [
+      {
+        "target": "Kelli Wright",
+        "relation": "employee"
+      }
+    ],
+    "Robin Johnson": [],
+    "Gordon Wilson": [
+      {
+        "target": "Gina Martin",
+        "relation": "grandchild"
+      }
+    ],
+    "Brandi Miller": [
+      {
+        "target": "Whitney Wright",
+        "relation": "student"
+      }
+    ],
+    "Daryl Thomas": [],
+    "Carlton Davis": [
+      {
+        "target": "Lorraine Wilson",
+        "relation": "subject"
+      }
+    ],
+    "Patrick Nelson": [
+      {
+        "target": "Shannon Lee",
+        "relation": "patient"
+      }
+    ],
+    "Sarah Miller": [],
+    "Cheryl Wilson": [],
+    "Nathan Campbell": [],
+    "Tracy Evans": [
+      {
+        "target": "Anita Martin",
+        "relation": "mentee"
+      }
+    ],
+    "Teresa Lee": [],
+    "William Turner": [
+      {
+        "target": "Marilyn Thompson",
+        "relation": "friend"
+      }
+    ],
+    "Tiffany Martin": [],
+    "Clifford Allen": [],
+    "Candice Harris": [
+      {
+        "target": "Corey Evans",
+        "relation": "brother"
+      }
+    ],
+    "Diane Miller": [],
+    "Bradley White": [],
+    "Jared Taylor": [
+      {
+        "target": "Alvin Adams",
+        "relation": "researcher"
+      }
+    ],
+    "Marlon Garcia": [
+      {
+        "target": "Nancy Thompson",
+        "relation": "student"
+      }
+    ],
+    "Ramon Garcia": [
+      {
+        "target": "Floyd Hall",
+        "relation": "friend"
+      }
+    ],
+    "Nancy Thompson": [],
+    "Rachel Green": [
+      {
+        "target": "Gilbert Brown",
+        "relation": "sailor"
+      }
+    ],
+    "Eric Wilson": [],
+    "Sheila Garcia": [],
+    "Wayne Davis": [
+      {
+        "target": "Jeremy Wright",
+        "relation": "subject"
+      }
+    ],
+    "Francis Lee": [
+      {
+        "target": "Warren Davis",
+        "relation": "mentee"
+      }
+    ],
+    "Colleen Martin": [],
+    "Colin Wilson": [],
+    "Dorothy White": [
+      {
+        "target": "Stephanie Hall",
+        "relation": "student"
+      }
+    ],
+    "Monica Lewis": [
+      {
+        "target": "Matthew Johnson",
+        "relation": "friend"
+      }
+    ],
+    "Evan Wright": [
+      {
+        "target": "Scott Wilson",
+        "relation": "patient"
+      }
+    ],
+    "Tara Campbell": [
+      {
+        "target": "Tammy Lee",
+        "relation": "child"
+      }
+    ],
+    "Courtney Wilson": [
+      {
+        "target": "Adam White",
+        "relation": "brother"
+      }
+    ],
+    "Edgar Hall": [],
+    "Jenna Miller": [],
+    "Seth Parker": [
+      {
+        "target": "Cecil Taylor",
+        "relation": "researcher"
+      }
+    ],
+    "Brent Wright": [],
+    "Phyllis Wright": [
+      {
+        "target": "Jennifer White",
+        "relation": "student"
+      }
+    ],
+    "Leslie Baker": [],
+    "Stephanie Hall": [],
+    "Kevin Phillips": [],
+    "Shaun Smith": [
+      {
+        "target": "Bradley White",
+        "relation": "passenger"
+      }
+    ],
+    "Carrie Thomas": [],
+    "Kent Taylor": [],
+    "Donna Miller": [
+      {
+        "target": "Jacob Martinez",
+        "relation": "researcher"
+      }
+    ],
+    "Bonnie Lee": [],
+    "Christina Thompson": [],
+    "Kristina Walker": [
+      {
+        "target": "Daryl Thomas",
+        "relation": "grandchild"
+      }
+    ],
+    "Melanie Brown": [],
+    "Nicole Harris": [],
+    "Dana Evans": [
+      {
+        "target": "Nathan Campbell",
+        "relation": "student"
+      }
+    ],
+    "Norman Clark": [],
+    "Emma Thompson": [],
+    "Jason Taylor": [
+      {
+        "target": "Christine Miller",
+        "relation": "patient"
+      }
+    ],
+    "Glen Adams": [
+      {
+        "target": "Kevin Phillips",
+        "relation": "employee"
+      }
+    ],
+    "Derrick Allen": [],
+    "Jacob Martinez": [],
+    "Antonio Garcia": [
+      {
+        "target": "Dawn Harris",
+        "relation": "patient"
+      }
+    ],
+    "Douglas Wright": [
+      {
+        "target": "Sheila Garcia",
+        "relation": "passenger"
+      }
+    ],
+    "Brett Wilson": [
+      {
+        "target": "Wade Adams",
+        "relation": "student"
+      }
+    ],
+    "Morgan Wilson": [],
+    "Perry Wilson": [],
+    "April Reed": [
+      {
+        "target": "Jenna Miller",
+        "relation": "grandchild"
+      }
+    ],
+    "Marilyn Thompson": [],
+    "Connie Evans": [],
+    "Amanda Anderson": [],
+    "Vanessa Brown": [
+      {
+        "target": "Valerie Adams",
+        "relation": "researcher"
+      }
+    ],
+    "Cecil Taylor": [],
+    "Tammy Lee": [],
+    "Samantha Harris": [],
+    "Clarence Davis": [],
+    "Mark Wilson": [
+      {
+        "target": "Harvey Baker",
+        "relation": "researcher"
+      }
+    ],
+    "Kyle Thompson": [
+      {
+        "target": "Jeremiah Baker",
+        "relation": "student"
+      }
+    ],
+    "Eugene Davis": [
+      {
+        "target": "Dennis Clark",
+        "relation": "patient"
+      }
+    ],
+    "Danielle Nelson": [
+      {
+        "target": "Derrick Allen",
+        "relation": "mentee"
+      }
+    ],
+    "Michelle Thomas": [],
+    "Kelli Wright": [],
+    "Adam White": [],
+    "Annette Miller": [
+      {
+        "target": "Nathaniel Adams",
+        "relation": "nephew"
+      }
+    ],
+    "Matthew Johnson": [],
+    "Georgia Brown": [],
+    "Gregory Adams": [
+      {
+        "target": "Perry Wilson",
+        "relation": "student"
+      }
+    ],
+    "Gina Martin": [],
+    "Helen Thompson": [],
+    "Denise Brown": [],
+    "Amber Lee": [
+      {
+        "target": "Jonathan Lewis",
+        "relation": "sailor"
+      }
+    ],
+    "Jonathan Lewis": [],
+    "Hector Garcia": [],
+    "Christopher Lee": [
+      {
+        "target": "Connie Evans",
+        "relation": "niece"
+      }
+    ],
+    "Ashley Martinez": [
+      {
+        "target": "Teresa Lee",
+        "relation": "friend"
+      }
+    ],
+    "Dawn Harris": [],
+    "Travis Brown": [
+      {
+        "target": "Diane Miller",
+        "relation": "researcher"
+      }
+    ],
+    "Harvey Baker": [],
+    "Joanne Taylor": [],
+    "Valerie Adams": [],
+    "Jillian Adams": [],
+    "Betty Davis": [
+      {
+        "target": "Jillian Adams",
+        "relation": "patient"
+      }
+    ],
+    "Sandra White": [],
+    "Kelly Clark": [
+      {
+        "target": "Robin Johnson",
+        "relation": "client"
+      }
+    ],
+    "Natalie Johnson": [],
+    "Jennifer White": [],
+    "Ryan Martin": [],
+    "Warren Davis": [],
+    "Dennis Clark": [],
+    "Wendell Taylor": [
+      {
+        "target": "Janice Thompson",
+        "relation": "employee"
+      }
+    ],
+    "Chad Davis": [
+      {
+        "target": "Michael Smith",
+        "relation": "client"
+      }
+    ],
+    "Sylvester Brown": [
+      {
+        "target": "Andrea Thomas",
+        "relation": "passenger"
+      }
+    ],
+    "Victoria Wright": [
+      {
+        "target": "Nicole Harris",
+        "relation": "sailor"
+      }
+    ]
+  }
+}

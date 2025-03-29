@@ -1,0 +1,906 @@
+{
+  "characters": [
+    "Penelope Shaw",
+    "Andrei Petrov",
+    "Gabriel Thompson",
+    "Yvette Pittman",
+    "Nadia Abadi",
+    "Liam O'Connor",
+    "Jasmine Khan",
+    "Xiuying Gao",
+    "Warren Lyons",
+    "Ananya Sharma",
+    "Scarlett West",
+    "Gemma Edwards",
+    "Akira Tanaka",
+    "Jordan Gibson",
+    "Audrey Cooper",
+    "Isaac Cohen",
+    "Hannah Parker",
+    "Aleksandra Ivanova",
+    "Irene Papadopoulos",
+    "Karina Alvarez",
+    "Ella Watson",
+    "Julian Arnold",
+    "Wendy Castro",
+    "Hazel Morris",
+    "Helena Novak",
+    "Raymond Gardner",
+    "Yasmine Graves",
+    "Alexander Reed",
+    "Javier Hernandez",
+    "Cadence Howard",
+    "John Pierce",
+    "Nikolai Sokolov",
+    "Bob Williams",
+    "Elena Popova",
+    "Xena Rios",
+    "Tatiana Orlova",
+    "Robert Hayes",
+    "Dominic Carter",
+    "Winter Ball",
+    "Stefan Nowak",
+    "Xavier Poole",
+    "Victor Norman",
+    "Zayd Abdullah",
+    "Amir Zaidi",
+    "Lifen Qiu",
+    "Theodore Hayes",
+    "Maya Patel",
+    "Lucia Rodriguez",
+    "Christian Perry",
+    "Freya Evans",
+    "Bianca Rossi",
+    "Zara Hussein",
+    "Aaron Goldstein",
+    "Grace Stewart",
+    "Raj Malhotra",
+    "Jinhai Ruan",
+    "Haruki Yamamoto",
+    "Rosa Sanchez",
+    "Joseph Fowler",
+    "Kai Nakamura",
+    "Paulo Silva",
+    "Jade Myers",
+    "Tristan Lowe",
+    "Amelia Clarke",
+    "Luna Porter",
+    "Xenia Cohen",
+    "Chloe Wood",
+    "Xander Brooks",
+    "Elijah Brown",
+    "Yasmin Malik",
+    "Victor Mendoza",
+    "Imani Jefferson",
+    "Meihui Zhu",
+    "Valentina Romano",
+    "Daniel Long",
+    "Quentin Wagner",
+    "Selena Rivera",
+    "Julia Nguyen",
+    "Richard Garcia",
+    "Sebastian M\u00fcller",
+    "Ahmed Al-Farsi",
+    "Elizabeth Sanders",
+    "Ethan Wright",
+    "Jocelyn Hicks",
+    "Gabriel Carter",
+    "Ruby Lambert",
+    "Genevieve Lambert",
+    "Carmen Diaz",
+    "Dakota Barnes",
+    "Thomas Norton",
+    "Ezra Mitchell",
+    "Wyatt Patton",
+    "Eden Rivera",
+    "Emery Gray",
+    "Zoe Collins",
+    "Maria Gutierrez",
+    "Wren Yates",
+    "Angela Washington",
+    "Ethan Robertson",
+    "Sebastian Holt",
+    "Hiroshi Nakamura",
+    "Brianna Ross",
+    "Vincent Walsh",
+    "Anders Johansson",
+    "Oliver Bennett",
+    "June Webb",
+    "Wesley Clark",
+    "James Romero",
+    "Silas Montgomery",
+    "Lina Bishara",
+    "Serenity Burton",
+    "Dylan King",
+    "Grayson Collins",
+    "Sanjay Gupta",
+    "Caleb Mitchell",
+    "Henry Flores",
+    "Eva Phillips",
+    "Austin Hayes",
+    "Claire Scott",
+    "Sophia Anderson",
+    "Wallace Lynch",
+    "Ingrid Svenson",
+    "Samira Karim",
+    "Zachary Baker",
+    "Gabriela Fernandez",
+    "Quinn Bowman",
+    "Sofia Vasquez",
+    "Marina Petrova",
+    "Willow Byrd",
+    "Jack Ortiz",
+    "Violet Day",
+    "Omar Hassan",
+    "Tara Wilson",
+    "Chase Griffin",
+    "Sakura Watanabe",
+    "Faith Allen",
+    "Theodore Fleming",
+    "Leo Tucker",
+    "Delia Morales",
+    "Wyatt Hill",
+    "Santiago Torres",
+    "Quinn Morgan",
+    "Yale Patton",
+    "Paisley Riley",
+    "Alice Johnson",
+    "Felix Weber",
+    "Isabelle Russell",
+    "Ximena Diaz",
+    "Yuki Tanaka",
+    "Zelda Wright",
+    "Caleb Jenkins",
+    "Olivia Campbell",
+    "Abigail Turner",
+    "Eleanor Kelly",
+    "Ibrahim Mahmoud",
+    "Owen Jacobs",
+    "Hunter Sullivan",
+    "Kwame Osei",
+    "Kenji Watanabe",
+    "Sadie Holt",
+    "Samuel Parks",
+    "Benjamin Foster",
+    "Zola Shannon",
+    "Layla Ibrahim",
+    "Miguel Reyes",
+    "Julia Mason",
+    "Clara Dubois",
+    "Marcus Davis",
+    "Delaney Fisher",
+    "Darius Jackson",
+    "Zane Weaver",
+    "Fatima Ahmed",
+    "Autumn Price",
+    "Gavin Hughes",
+    "Parker Olsen",
+    "Walter Banks",
+    "Elias Ward",
+    "Esther Lee",
+    "Priya Patel",
+    "Lydia Chapman",
+    "Diana Martinez",
+    "Beatrice Reynolds",
+    "Emmett Brooks",
+    "Francisco Gomez",
+    "Riley Barrett",
+    "Luke Lawson",
+    "Rebecca Friedman",
+    "Elliot Peterson",
+    "Ryan Newman",
+    "Finn Cook",
+    "Florence Baker",
+    "Malik Johnson",
+    "Charlie Anderson",
+    "Naomi Kim",
+    "David Murphy",
+    "Brandon Bell",
+    "Yara Stanton",
+    "Willow Green",
+    "Yara Underwood",
+    "Mateo Gonzalez"
+  ],
+  "adjacency_list": {
+    "Penelope Shaw": [],
+    "Andrei Petrov": [
+      {
+        "target": "Luke Lawson",
+        "relation": "passenger"
+      }
+    ],
+    "Gabriel Thompson": [],
+    "Yvette Pittman": [
+      {
+        "target": "Yale Patton",
+        "relation": "athlete"
+      }
+    ],
+    "Nadia Abadi": [],
+    "Liam O'Connor": [
+      {
+        "target": "Rosa Sanchez",
+        "relation": "child"
+      }
+    ],
+    "Jasmine Khan": [],
+    "Xiuying Gao": [
+      {
+        "target": "Joseph Fowler",
+        "relation": "sailor"
+      }
+    ],
+    "Warren Lyons": [],
+    "Ananya Sharma": [],
+    "Scarlett West": [
+      {
+        "target": "Benjamin Foster",
+        "relation": "employee"
+      }
+    ],
+    "Gemma Edwards": [
+      {
+        "target": "Ryan Newman",
+        "relation": "friend"
+      }
+    ],
+    "Akira Tanaka": [
+      {
+        "target": "Marcus Davis",
+        "relation": "client"
+      }
+    ],
+    "Jordan Gibson": [
+      {
+        "target": "Darius Jackson",
+        "relation": "patient"
+      }
+    ],
+    "Audrey Cooper": [
+      {
+        "target": "Jasmine Khan",
+        "relation": "passenger"
+      }
+    ],
+    "Isaac Cohen": [],
+    "Hannah Parker": [],
+    "Aleksandra Ivanova": [],
+    "Irene Papadopoulos": [],
+    "Karina Alvarez": [
+      {
+        "target": "Priya Patel",
+        "relation": "grandchild"
+      }
+    ],
+    "Ella Watson": [
+      {
+        "target": "Ananya Sharma",
+        "relation": "employee"
+      }
+    ],
+    "Julian Arnold": [],
+    "Wendy Castro": [],
+    "Hazel Morris": [
+      {
+        "target": "Elijah Brown",
+        "relation": "patient"
+      }
+    ],
+    "Helena Novak": [],
+    "Raymond Gardner": [],
+    "Yasmine Graves": [],
+    "Alexander Reed": [],
+    "Javier Hernandez": [
+      {
+        "target": "Lina Bishara",
+        "relation": "passenger"
+      }
+    ],
+    "Cadence Howard": [],
+    "John Pierce": [],
+    "Nikolai Sokolov": [
+      {
+        "target": "Raj Malhotra",
+        "relation": "student"
+      }
+    ],
+    "Bob Williams": [
+      {
+        "target": "Daniel Long",
+        "relation": "researcher"
+      }
+    ],
+    "Elena Popova": [
+      {
+        "target": "Quentin Wagner",
+        "relation": "student"
+      }
+    ],
+    "Xena Rios": [
+      {
+        "target": "Naomi Kim",
+        "relation": "patient"
+      }
+    ],
+    "Tatiana Orlova": [
+      {
+        "target": "Irene Papadopoulos",
+        "relation": "athlete"
+      }
+    ],
+    "Robert Hayes": [],
+    "Dominic Carter": [
+      {
+        "target": "Gabriela Fernandez",
+        "relation": "employee"
+      }
+    ],
+    "Winter Ball": [],
+    "Stefan Nowak": [
+      {
+        "target": "Bianca Rossi",
+        "relation": "researcher"
+      }
+    ],
+    "Xavier Poole": [
+      {
+        "target": "Theodore Hayes",
+        "relation": "passenger"
+      }
+    ],
+    "Victor Norman": [
+      {
+        "target": "Clara Dubois",
+        "relation": "subject"
+      }
+    ],
+    "Zayd Abdullah": [
+      {
+        "target": "Kenji Watanabe",
+        "relation": "client"
+      }
+    ],
+    "Amir Zaidi": [
+      {
+        "target": "Olivia Campbell",
+        "relation": "employee"
+      }
+    ],
+    "Lifen Qiu": [
+      {
+        "target": "Yasmine Graves",
+        "relation": "researcher"
+      }
+    ],
+    "Theodore Hayes": [],
+    "Maya Patel": [],
+    "Lucia Rodriguez": [],
+    "Christian Perry": [
+      {
+        "target": "Penelope Shaw",
+        "relation": "passenger"
+      }
+    ],
+    "Freya Evans": [
+      {
+        "target": "Delia Morales",
+        "relation": "researcher"
+      }
+    ],
+    "Bianca Rossi": [],
+    "Zara Hussein": [
+      {
+        "target": "Quinn Morgan",
+        "relation": "friend"
+      }
+    ],
+    "Aaron Goldstein": [
+      {
+        "target": "Gabriel Thompson",
+        "relation": "mentee"
+      }
+    ],
+    "Grace Stewart": [],
+    "Raj Malhotra": [],
+    "Jinhai Ruan": [
+      {
+        "target": "Robert Hayes",
+        "relation": "athlete"
+      }
+    ],
+    "Haruki Yamamoto": [],
+    "Rosa Sanchez": [],
+    "Joseph Fowler": [],
+    "Kai Nakamura": [
+      {
+        "target": "Hannah Parker",
+        "relation": "employee"
+      }
+    ],
+    "Paulo Silva": [],
+    "Jade Myers": [
+      {
+        "target": "Rebecca Friedman",
+        "relation": "employee"
+      }
+    ],
+    "Tristan Lowe": [
+      {
+        "target": "Grayson Collins",
+        "relation": "student"
+      }
+    ],
+    "Amelia Clarke": [],
+    "Luna Porter": [],
+    "Xenia Cohen": [
+      {
+        "target": "Maria Gutierrez",
+        "relation": "student"
+      }
+    ],
+    "Chloe Wood": [],
+    "Xander Brooks": [],
+    "Elijah Brown": [],
+    "Yasmin Malik": [
+      {
+        "target": "Owen Jacobs",
+        "relation": "sailor"
+      }
+    ],
+    "Victor Mendoza": [],
+    "Imani Jefferson": [],
+    "Meihui Zhu": [
+      {
+        "target": "Zane Weaver",
+        "relation": "employee"
+      }
+    ],
+    "Valentina Romano": [
+      {
+        "target": "Winter Ball",
+        "relation": "mentee"
+      }
+    ],
+    "Daniel Long": [],
+    "Quentin Wagner": [],
+    "Selena Rivera": [
+      {
+        "target": "Helena Novak",
+        "relation": "student"
+      }
+    ],
+    "Julia Nguyen": [],
+    "Richard Garcia": [],
+    "Sebastian M\u00fcller": [
+      {
+        "target": "Grace Stewart",
+        "relation": "employee"
+      }
+    ],
+    "Ahmed Al-Farsi": [],
+    "Elizabeth Sanders": [
+      {
+        "target": "Walter Banks",
+        "relation": "student"
+      }
+    ],
+    "Ethan Wright": [
+      {
+        "target": "Cadence Howard",
+        "relation": "student"
+      }
+    ],
+    "Jocelyn Hicks": [
+      {
+        "target": "Chloe Wood",
+        "relation": "passenger"
+      }
+    ],
+    "Gabriel Carter": [
+      {
+        "target": "Riley Barrett",
+        "relation": "client"
+      }
+    ],
+    "Ruby Lambert": [
+      {
+        "target": "Emery Gray",
+        "relation": "grandchild"
+      }
+    ],
+    "Genevieve Lambert": [
+      {
+        "target": "Nadia Abadi",
+        "relation": "patient"
+      }
+    ],
+    "Carmen Diaz": [
+      {
+        "target": "Elias Ward",
+        "relation": "employee"
+      }
+    ],
+    "Dakota Barnes": [],
+    "Thomas Norton": [
+      {
+        "target": "Caleb Jenkins",
+        "relation": "passenger"
+      }
+    ],
+    "Ezra Mitchell": [],
+    "Wyatt Patton": [
+      {
+        "target": "Imani Jefferson",
+        "relation": "grandchild"
+      }
+    ],
+    "Eden Rivera": [],
+    "Emery Gray": [],
+    "Zoe Collins": [],
+    "Maria Gutierrez": [],
+    "Wren Yates": [
+      {
+        "target": "Xander Brooks",
+        "relation": "friend"
+      }
+    ],
+    "Angela Washington": [
+      {
+        "target": "Raymond Gardner",
+        "relation": "employee"
+      }
+    ],
+    "Ethan Robertson": [],
+    "Sebastian Holt": [],
+    "Hiroshi Nakamura": [
+      {
+        "target": "Fatima Ahmed",
+        "relation": "sailor"
+      }
+    ],
+    "Brianna Ross": [],
+    "Vincent Walsh": [
+      {
+        "target": "Richard Garcia",
+        "relation": "athlete"
+      }
+    ],
+    "Anders Johansson": [
+      {
+        "target": "Delaney Fisher",
+        "relation": "employee"
+      }
+    ],
+    "Oliver Bennett": [
+      {
+        "target": "Lucia Rodriguez",
+        "relation": "client"
+      }
+    ],
+    "June Webb": [
+      {
+        "target": "Ahmed Al-Farsi",
+        "relation": "brother"
+      }
+    ],
+    "Wesley Clark": [
+      {
+        "target": "Esther Lee",
+        "relation": "niece"
+      }
+    ],
+    "James Romero": [
+      {
+        "target": "Emmett Brooks",
+        "relation": "patient"
+      }
+    ],
+    "Silas Montgomery": [],
+    "Lina Bishara": [],
+    "Serenity Burton": [],
+    "Dylan King": [
+      {
+        "target": "Malik Johnson",
+        "relation": "patient"
+      }
+    ],
+    "Grayson Collins": [],
+    "Sanjay Gupta": [
+      {
+        "target": "Kwame Osei",
+        "relation": "student"
+      }
+    ],
+    "Caleb Mitchell": [
+      {
+        "target": "Ethan Robertson",
+        "relation": "child"
+      }
+    ],
+    "Henry Flores": [
+      {
+        "target": "John Pierce",
+        "relation": "subject"
+      }
+    ],
+    "Eva Phillips": [
+      {
+        "target": "Aleksandra Ivanova",
+        "relation": "sailor"
+      }
+    ],
+    "Austin Hayes": [
+      {
+        "target": "Victor Mendoza",
+        "relation": "employee"
+      }
+    ],
+    "Claire Scott": [
+      {
+        "target": "Wendy Castro",
+        "relation": "child"
+      }
+    ],
+    "Sophia Anderson": [
+      {
+        "target": "Julia Nguyen",
+        "relation": "mentee"
+      }
+    ],
+    "Wallace Lynch": [],
+    "Ingrid Svenson": [
+      {
+        "target": "Warren Lyons",
+        "relation": "client"
+      }
+    ],
+    "Samira Karim": [
+      {
+        "target": "Luna Porter",
+        "relation": "patient"
+      }
+    ],
+    "Zachary Baker": [
+      {
+        "target": "Parker Olsen",
+        "relation": "patient"
+      }
+    ],
+    "Gabriela Fernandez": [],
+    "Quinn Bowman": [
+      {
+        "target": "Silas Montgomery",
+        "relation": "client"
+      }
+    ],
+    "Sofia Vasquez": [
+      {
+        "target": "Brandon Bell",
+        "relation": "friend"
+      }
+    ],
+    "Marina Petrova": [
+      {
+        "target": "Julian Arnold",
+        "relation": "patient"
+      }
+    ],
+    "Willow Byrd": [
+      {
+        "target": "Alexander Reed",
+        "relation": "nephew"
+      }
+    ],
+    "Jack Ortiz": [
+      {
+        "target": "Sadie Holt",
+        "relation": "employee"
+      }
+    ],
+    "Violet Day": [
+      {
+        "target": "Isabelle Russell",
+        "relation": "employee"
+      }
+    ],
+    "Omar Hassan": [
+      {
+        "target": "Sebastian Holt",
+        "relation": "employee"
+      }
+    ],
+    "Tara Wilson": [],
+    "Chase Griffin": [
+      {
+        "target": "Santiago Torres",
+        "relation": "friend"
+      }
+    ],
+    "Sakura Watanabe": [
+      {
+        "target": "Miguel Reyes",
+        "relation": "nephew"
+      }
+    ],
+    "Faith Allen": [
+      {
+        "target": "Paulo Silva",
+        "relation": "student"
+      }
+    ],
+    "Theodore Fleming": [],
+    "Leo Tucker": [
+      {
+        "target": "Hunter Sullivan",
+        "relation": "student"
+      }
+    ],
+    "Delia Morales": [],
+    "Wyatt Hill": [
+      {
+        "target": "Zoe Collins",
+        "relation": "grandchild"
+      }
+    ],
+    "Santiago Torres": [],
+    "Quinn Morgan": [],
+    "Yale Patton": [],
+    "Paisley Riley": [
+      {
+        "target": "Serenity Burton",
+        "relation": "friend"
+      }
+    ],
+    "Alice Johnson": [],
+    "Felix Weber": [
+      {
+        "target": "Theodore Fleming",
+        "relation": "mentee"
+      }
+    ],
+    "Isabelle Russell": [],
+    "Ximena Diaz": [
+      {
+        "target": "Finn Cook",
+        "relation": "passenger"
+      }
+    ],
+    "Yuki Tanaka": [
+      {
+        "target": "Maya Patel",
+        "relation": "student"
+      }
+    ],
+    "Zelda Wright": [
+      {
+        "target": "Charlie Anderson",
+        "relation": "patient"
+      }
+    ],
+    "Caleb Jenkins": [],
+    "Olivia Campbell": [],
+    "Abigail Turner": [
+      {
+        "target": "Ibrahim Mahmoud",
+        "relation": "client"
+      }
+    ],
+    "Eleanor Kelly": [
+      {
+        "target": "Ezra Mitchell",
+        "relation": "patient"
+      }
+    ],
+    "Ibrahim Mahmoud": [],
+    "Owen Jacobs": [],
+    "Hunter Sullivan": [],
+    "Kwame Osei": [],
+    "Kenji Watanabe": [],
+    "Sadie Holt": [],
+    "Samuel Parks": [
+      {
+        "target": "Alice Johnson",
+        "relation": "student"
+      }
+    ],
+    "Benjamin Foster": [],
+    "Zola Shannon": [],
+    "Layla Ibrahim": [],
+    "Miguel Reyes": [],
+    "Julia Mason": [],
+    "Clara Dubois": [],
+    "Marcus Davis": [],
+    "Delaney Fisher": [],
+    "Darius Jackson": [],
+    "Zane Weaver": [],
+    "Fatima Ahmed": [],
+    "Autumn Price": [
+      {
+        "target": "Haruki Yamamoto",
+        "relation": "employee"
+      }
+    ],
+    "Gavin Hughes": [],
+    "Parker Olsen": [],
+    "Walter Banks": [],
+    "Elias Ward": [],
+    "Esther Lee": [],
+    "Priya Patel": [],
+    "Lydia Chapman": [
+      {
+        "target": "Gavin Hughes",
+        "relation": "child"
+      }
+    ],
+    "Diana Martinez": [
+      {
+        "target": "Dakota Barnes",
+        "relation": "friend"
+      }
+    ],
+    "Beatrice Reynolds": [
+      {
+        "target": "Julia Mason",
+        "relation": "child"
+      }
+    ],
+    "Emmett Brooks": [],
+    "Francisco Gomez": [
+      {
+        "target": "Isaac Cohen",
+        "relation": "sailor"
+      }
+    ],
+    "Riley Barrett": [],
+    "Luke Lawson": [],
+    "Rebecca Friedman": [],
+    "Elliot Peterson": [
+      {
+        "target": "Eden Rivera",
+        "relation": "athlete"
+      }
+    ],
+    "Ryan Newman": [],
+    "Finn Cook": [],
+    "Florence Baker": [
+      {
+        "target": "Tara Wilson",
+        "relation": "friend"
+      }
+    ],
+    "Malik Johnson": [],
+    "Charlie Anderson": [],
+    "Naomi Kim": [],
+    "David Murphy": [
+      {
+        "target": "Amelia Clarke",
+        "relation": "student"
+      }
+    ],
+    "Brandon Bell": [],
+    "Yara Stanton": [
+      {
+        "target": "Brianna Ross",
+        "relation": "passenger"
+      }
+    ],
+    "Willow Green": [
+      {
+        "target": "Wallace Lynch",
+        "relation": "athlete"
+      }
+    ],
+    "Yara Underwood": [
+      {
+        "target": "Zola Shannon",
+        "relation": "client"
+      }
+    ],
+    "Mateo Gonzalez": [
+      {
+        "target": "Layla Ibrahim",
+        "relation": "researcher"
+      }
+    ]
+  }
+}

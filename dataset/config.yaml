@@ -1,0 +1,19 @@
+# Configuration file for relationship graph generation
+
+# Output settings
+output_dir: ./output
+
+# Character settings
+num_characters: 200                        # Number of characters to generate
+character_names_file: data/characters.txt              # Optional file with character names (one per line)    
+relations_file: data/relations.txt
+
+# Relationship settings
+min_relationships: 1                      # Minimum number of relationships per character
+max_relationships: 1                      # Maximum number of relationships per character
+random_seed: 42                          # Random seed for reproducibility
+
+# Training data generation
+generate_training: true                  # Set to true to automatically generate training data
+num_paraphrases: 4                       # Number of paraphrases to generate per question
+openai_model: gpt-4o-mini               # OpenAI model to use for paraphrasing
