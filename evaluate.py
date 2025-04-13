@@ -59,7 +59,7 @@ def load_data(csv_paths):
 def main():
     # --- Hardcoded Parameters ---
     # ---vvv--- EDIT THESE VALUES ---vvv---
-    model_path = "./LLaDA-8B-Instruct-finetuned-wandb/final_model"  # Path to the fine-tuned model directory
+    model_path = "./LLaDA-8B-Instruct-finetuned/checkpoint-500"  # Path to the fine-tuned model directory
     # Ensure these paths correctly point to your forward and backward test sets
     csv_paths = ["dataset/output/dataset/forward_test.csv", "dataset/output/dataset/backward_test.csv"]
     output_file = "evaluation_results_split_accuracy.csv" # Path to save the evaluation results CSV

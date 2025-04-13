@@ -8,12 +8,14 @@ import pandas as pd
 from tqdm import tqdm
 import logging
 import wandb
+from generate import generate
+import random
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Constants
-MASK_ID = 126336  # The token id of [MASK] in LLaDA (from GUIDELINES.md line 16)
+MASK_ID = 126336 
 
 class SFTDataset(Dataset):
     """
@@ -88,28 +90,15 @@ class SFTDataset(Dataset):
                 add_generation_prompt=False
             )
 
-            # --- Handle inconsistent return type ---
-            # Check if the output is a dictionary (expected) or a tensor (observed)
-            if isinstance(tokenized_output, dict):
-                # Standard case: extract tensor from dictionary
-                if "input_ids" not in tokenized_output:
-                     logging.error(f"Tokenizer output dictionary missing 'input_ids' key at index {idx}")
-                     raise ValueError(f"Tokenizer returned dict without 'input_ids' for item {idx}")
-                input_ids_tensor = tokenized_output["input_ids"]
-            elif isinstance(tokenized_output, torch.Tensor):
-                # Observed case: use the returned tensor directly
+
+            try:
                 input_ids_tensor = tokenized_output
-                # Optional: Log this occurrence if you want to track it
-                # logging.warning(f"Tokenizer returned Tensor directly at index {idx}.")
-            else:
+            except:
                 # Unexpected case: raise an error
                 logging.error(f"Unexpected output type from tokenizer at index {idx}: {type(tokenized_output)}")
                 raise TypeError(f"Tokenizer returned unexpected type {type(tokenized_output)} for item {idx}")
-            # --- End handling ---
 
 
-            # --- Process the input_ids tensor ---
-            # Now, ensure the tensor has the expected shape and remove the batch dim
             if input_ids_tensor.dim() == 2 and input_ids_tensor.shape[0] == 1:
                  input_ids = input_ids_tensor.squeeze(0) # Remove batch dimension -> shape (seq_len,)
             # Handle edge case where it might already be 1D (less likely with padding="max_length")
@@ -120,8 +109,6 @@ class SFTDataset(Dataset):
                 # Log unexpected shape and raise error
                 logging.error(f"Unexpected shape for tokenized input_ids at index {idx}: {input_ids_tensor.shape}")
                 raise ValueError(f"Tokenizer returned unexpected shape {input_ids_tensor.shape} for item {idx}")
-            # --- End processing ---
-
 
             # --- Calculate prompt length (remains the same) ---
             messages_prompt_only = [{"role": "user", "content": question}]
@@ -171,61 +158,61 @@ def forward_process(input_ids, eps=1e-3):
         p_mask: Probability mask used for masking each token (batch_size, seq_len)
     """
     b, l = input_ids.shape
-    # Generate a random noise level 't' for each sequence in the batch
     t = torch.rand(b, device=input_ids.device)
-    # Calculate the mask probability for each sequence (linear schedule)
     p_mask_per_sequence = (1 - eps) * t + eps
-    # Expand the probability to cover the full sequence length
     p_mask = p_mask_per_sequence[:, None].repeat(1, l)
 
-    # Determine which tokens to mask based on p_mask
     masked_indices = torch.rand((b, l), device=input_ids.device) < p_mask
-    # Replace masked tokens with MASK_ID
     noisy_batch = torch.where(masked_indices, MASK_ID, input_ids)
 
     return noisy_batch, masked_indices, p_mask
 
 def main():
-    # --- Hyperparameters & Config ---
-    # You can also move these to argparse if preferred
     config = {
         "model_path": "GSAI-ML/LLaDA-8B-Instruct",
-        "dataset_csv": "dataset/output/dataset/training.csv", # <--- *** SET THIS PATH ***
-        "output_dir": "./LLaDA-8B-Instruct-finetuned-wandb",
+        "dataset_csv": "dataset/output/dataset/training.csv",
+        "output_dir": "models/LLaDA-8B-Instruct-finetuned",
         "epochs": 10,
-        "batch_size": 1, # Physical batch size per device
+        "batch_size": 1,
         "learning_rate": 1e-5,
         "max_length": 1024,
         "warmup_ratio": 0.1,
-        "save_steps": 500, # Save checkpoint every N global steps
+        "save_steps": 2000,
         "gradient_accumulation_steps": 4,
-        "wandb_run_name": "llada-reversal", # <-- Set specific run name, or None for auto-generated
-        "log_steps": 5, # <-- Log metrics every N global steps
+        "wandb_run_name": "llada-reversal",
+        "log_steps": 5,
+        "generation_steps": 64,
+        "generation_length": 64,
+        "generation_block_length": 32,
+        "generation_temperature": 0.0,
+        "generation_cfg_scale": 0.0,
+        "generation_remasking": "low_confidence",
+        "random_seed": 42,
+        "num_generation_samples": 5
     }
-    # --- End Hyperparameters & Config ---
 
-
-    # --- Initialize W&B ---
     wandb.init(
         name=config["wandb_run_name"],
-        config=config # Log all hyperparameters
+        config=config
     )
-    # Use wandb.config for accessing hyperparameters after init
     config = wandb.config
-    # --- End W&B Init ---
 
+    # Set random seed for reproducibility
+    random.seed(config.random_seed)
+    torch.manual_seed(config.random_seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(config.random_seed)
+    logging.info(f"Set random seed to: {config.random_seed}")
+    wandb.config.update({"random_seed_used": config.random_seed})
 
-    # Set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     logging.info(f"Using device: {device}")
-    wandb.config.update({"device": str(device)}) # Log device info
+    wandb.config.update({"device": str(device)})
 
-    # Load model and tokenizer
     logging.info(f"Loading model and tokenizer from {config.model_path}")
-    # Use bf16 for potential speedup and memory saving if supported
     model_dtype = torch.bfloat16 if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else torch.float16
     logging.info(f"Using model dtype: {model_dtype}")
-    wandb.config.update({"model_dtype": str(model_dtype)}) # Log dtype
+    wandb.config.update({"model_dtype": str(model_dtype)})
 
     tokenizer = AutoTokenizer.from_pretrained(config.model_path, trust_remote_code=True)
     model = AutoModel.from_pretrained(
@@ -234,29 +221,26 @@ def main():
         torch_dtype=model_dtype
     ).to(device)
 
-    # Load dataset and dataloader
     try:
         train_dataset = SFTDataset(config.dataset_csv, tokenizer, max_length=config.max_length)
     except Exception as e:
         logging.error(f"Failed to load dataset: {e}")
-        wandb.finish(exit_code=1) # <-- Finish W&B run with error code
-        return # Exit if dataset fails
+        wandb.finish(exit_code=1)
+        return
 
-    # Adjust effective batch size
     effective_batch_size = config.batch_size * config.gradient_accumulation_steps
     logging.info(f"Physical Batch Size: {config.batch_size}, Grad Accumulation Steps: {config.gradient_accumulation_steps}, Effective Batch Size: {effective_batch_size}")
-    wandb.config.update({"effective_batch_size": effective_batch_size}) # Log effective batch size
+    wandb.config.update({"effective_batch_size": effective_batch_size})
 
 
     train_dataloader = DataLoader(train_dataset, batch_size=config.batch_size, shuffle=True)
 
-    # Setup optimizer and scheduler
     optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate)
     num_training_batches_per_epoch = len(train_dataloader)
     total_steps = (num_training_batches_per_epoch // config.gradient_accumulation_steps) * config.epochs
     num_warmup_steps = int(config.warmup_ratio * total_steps)
     logging.info(f"Total optimization steps: {total_steps}, Warmup steps: {num_warmup_steps}")
-    wandb.config.update({"total_steps": total_steps, "num_warmup_steps": num_warmup_steps}) # Log steps
+    wandb.config.update({"total_steps": total_steps, "num_warmup_steps": num_warmup_steps})
 
     scheduler = get_linear_schedule_with_warmup(
         optimizer,
@@ -264,14 +248,15 @@ def main():
         num_training_steps=total_steps
     )
 
-    # Create output directory
+    # Create output directories
     os.makedirs(config.output_dir, exist_ok=True)
+    samples_dir = os.path.join(config.output_dir, "samples") # Directory for saving samples
+    os.makedirs(samples_dir, exist_ok=True) # Create samples directory
 
-    # --- Training loop ---
     logging.info("Starting training...")
     global_step = 0
-    total_loss_accum = 0.0 # Accumulate loss for logging period
-    steps_since_log = 0    # Counter for logging period
+    total_loss_accum = 0.0
+    steps_since_log = 0
 
     for epoch in range(config.epochs):
         model.train()
@@ -401,6 +386,91 @@ def main():
         })
         # --- End Log Epoch Metrics ---
 
+        # --- Generate Sample Output at Epoch End ---
+        logging.info(f"Generating {config.num_generation_samples} sample(s) at end of Epoch {epoch+1}...")
+        model.eval() # Set model to evaluation mode
+
+        # Define the output file path for this epoch's samples
+        epoch_samples_file = os.path.join(samples_dir, f"epoch_{epoch+1}_samples.txt")
+
+        # Check if dataset is empty before sampling
+        if len(train_dataset) == 0:
+            logging.warning("Training dataset is empty. Skipping generation.")
+        else:
+            # Open the file in append mode to add samples for this epoch
+            with open(epoch_samples_file, "a", encoding="utf-8") as f_samples:
+                f_samples.write(f"--- Epoch {epoch+1} Samples ---\n\n") # Add header for the epoch
+
+                # Loop to generate multiple samples
+                for i in range(config.num_generation_samples):
+                    try:
+                        # Sample a random item from the training dataset
+                        sample_idx = random.randint(0, len(train_dataset) - 1)
+                        sample_item = train_dataset.dataframe.iloc[sample_idx]
+                        sampled_question = sample_item["question"]
+                        true_answer = sample_item["answer"] # Get the true answer
+                        logging.info(f"Generating sample {i+1}/{config.num_generation_samples} using question: {sampled_question}")
+
+                        # Prepare prompt using chat template with the sampled question
+                        messages = [{"role": "user", "content": sampled_question}]
+                        prompt_text = tokenizer.apply_chat_template(
+                            messages,
+                            add_generation_prompt=True,
+                            tokenize=False
+                        )
+                        input_ids = tokenizer(prompt_text, return_tensors="pt")['input_ids'].to(device)
+
+                        # Generate
+                        with torch.no_grad():
+                            generated_ids = generate(
+                                model,
+                                input_ids,
+                                steps=config.generation_steps,
+                                gen_length=config.generation_length,
+                                block_length=config.generation_block_length,
+                                temperature=config.generation_temperature,
+                                cfg_scale=config.generation_cfg_scale,
+                                remasking=config.generation_remasking,
+                                mask_id=MASK_ID
+                            )
+
+                        # Decode the generated part
+                        if generated_ids.shape[1] > input_ids.shape[1]:
+                            generated_text = tokenizer.batch_decode(
+                                generated_ids[:, input_ids.shape[1]:],
+                                skip_special_tokens=True
+                            )[0]
+                        else:
+                            generated_text = "[No text generated]"
+
+                        # Log to console including the true answer
+                        logging.info(f"Epoch {epoch+1} Sample {i+1} Prompt: {sampled_question}")
+                        logging.info(f"Epoch {epoch+1} Sample {i+1} True Answer: {true_answer}")
+                        logging.info(f"Epoch {epoch+1} Sample {i+1} Generation: {generated_text}")
+
+                        # Format the output string for the file
+                        sample_output = (
+                            f"--- Sample {i+1} ---\n"
+                            f"Prompt (Question):\n{sampled_question}\n\n"
+                            f"True Answer:\n{true_answer}\n\n"
+                            f"Generated Answer:\n{generated_text}\n"
+                            f"--------------------\n\n"
+                        )
+                        # Write the formatted sample to the file
+                        f_samples.write(sample_output)
+
+                    except IndexError:
+                         logging.error(f"IndexError during sampling for sample {i+1}. Dataset length: {len(train_dataset)}, Tried index: {sample_idx}. Skipping this sample.")
+                         f_samples.write(f"--- Sample {i+1} ---\nError: IndexError during sampling. Skipping.\n--------------------\n\n")
+                    except Exception as e:
+                        logging.error(f"Error during generation for sample {i+1} at end of epoch {epoch+1}: {e}")
+                        # Log error to the file as well
+                        f_samples.write(f"--- Sample {i+1} ---\nError during generation: {e}\n--------------------\n\n")
+
+        # IMPORTANT: Set model back to training mode for the next epoch AFTER the loop and file operations
+        model.train()
+        # --- End Generate Sample Output ---
+
     # --- Save final model ---
     final_model_dir = os.path.join(config.output_dir, "final_model")
     os.makedirs(final_model_dir, exist_ok=True)
@@ -408,27 +478,9 @@ def main():
     model.save_pretrained(final_model_dir)
     tokenizer.save_pretrained(final_model_dir)
 
-    # --- Log Final Model Artifact ---
-    # if config.save_model_as_artifact:
-    #     try:
-    #         final_model_artifact = wandb.Artifact(
-    #             name=f"{wandb.run.id}-final-model",
-    #             type="model",
-    #             description="Final LLaDA fine-tuned model",
-    #             metadata={"total_steps": global_step, "epochs": config.epochs}
-    #         )
-    #         final_model_artifact.add_dir(final_model_dir)
-    #         wandb.log_artifact(final_model_artifact, aliases=["final"]) # Add alias
-    #         logging.info(f"Logged final model artifact to W&B: {final_model_artifact.name}")
-    #     except Exception as e:
-    #         logging.error(f"Failed to log final model artifact to W&B: {e}")
-    # # --- End Log Final Model Artifact ---
-
     logging.info("Training finished.")
-    wandb.finish() # <-- Finish W&B run
+    wandb.finish()
 
 
 if __name__ == "__main__":
-    # Consider adding argparse here if you want to override config defaults from CLI
-    # For now, it uses the hardcoded config dictionary
     main()

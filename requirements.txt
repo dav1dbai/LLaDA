@@ -1,0 +1,11 @@
+torch
+peft
+tf-keras
+transformers
+trl
+datasets
+numpy==1.26.4
+wandb
+bitsandbytes
+jinja2>=3.1.0
+huggingface
